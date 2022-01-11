@@ -1,0 +1,12 @@
+docker image ***** list all images
+docker build . ***** build image
+docker build . -t recipe ***** build image with name
+docker rmi ImageID ***** delete image by ImageID
+docker system prune ***** will clean up any resources — images, containers, volumes, and networks — that are dangling
+docker run -it ImageName ***** interactive mode on 
+docker ps -a *****  to check which all containers are running in docker
+
+docker-compose build ***** build docker image using docker-compose configuration
+docker-compose --project-name recipe build  ***** build docker image with tag/name
+docker-compose run app sh -c "django-admin startproject app ."   ***** run app is a service defined in docker-compose file
+anything passing after run app is a command thats gonna be run on the linux container that we created using docker file 
