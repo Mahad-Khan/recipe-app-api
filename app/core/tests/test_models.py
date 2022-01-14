@@ -24,3 +24,11 @@ class ModelTests(APITestCase):
         """ test creating new user with no email raises error"""
         with self.assertRaises(ValueError):
             get_user_model().objects.create_user(None, password="pass123")
+
+    def test_create_new_super_user(self):
+        """ test creating a new super user """
+        user = get_user_model().objects.create_superuser("admin@admin.com", password="pass123")
+        
+        self.assertTrue(user.is_superuser)
+        self.assertTrue(user.is_staff)
+
